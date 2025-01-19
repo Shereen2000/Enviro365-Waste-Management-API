@@ -26,7 +26,7 @@ public class DisposalGuideLineController {
         this.disposalGuidelineMapper = disposalGuidelineMapper;
     }
 
-    @PostMapping(path = "waste-categories/{wasteCategory_Id}")
+    @PostMapping(path = "/waste-categories/{wasteCategory_Id}")
     public DisposalGuideLine addNewDisposalGuideline(@RequestBody @Valid DisposalGuidelineCreateRequest disposalGuidelineCreateRequest,
                                                      @PathVariable Long wasteCategory_Id)
     {
@@ -40,19 +40,19 @@ public class DisposalGuideLineController {
         return disposalGuideLineService.getAllDisposalGuidelines();
     }
 
-    @GetMapping(path = {"{disposalGuideline_Id}"})
+    @GetMapping(path = {"/{disposalGuideline_Id}"})
     public DisposalGuideLine getDisposalGuidelineById(@PathVariable Long disposalGuideline_Id)
     {
         return disposalGuideLineService.getDisposalGuidelineById(disposalGuideline_Id);
     }
 
-    @GetMapping(path = {"waste-categories/{wasteCategory_Id}"})
+    @GetMapping(path = {"/waste-categories/{wasteCategory_Id}"})
     public List<DisposalGuideLine> getDisposalGuideline_ByWasteCategoryId(@PathVariable Long wasteCategory_Id)
     {
         return disposalGuideLineService.getByWasteCategory(wasteCategory_Id);
     }
 
-    @DeleteMapping(path = "{disposalGuideline_Id}")
+    @DeleteMapping(path = "/{disposalGuideline_Id}")
     public void deleteDisposalGuideline(@PathVariable Long disposalGuideline_Id)
     {
         disposalGuideLineService.deleteDisposalGuideline(disposalGuideline_Id);

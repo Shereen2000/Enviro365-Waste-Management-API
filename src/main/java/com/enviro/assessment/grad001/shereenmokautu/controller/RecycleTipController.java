@@ -30,12 +30,12 @@ public class RecycleTipController {
         return recycleTipService.getAllRecycleTips();
     }
 
-    @GetMapping(path = "{Tip_id}")
+    @GetMapping(path = "/{Tip_id}")
     public RecycleTip getTipById(@PathVariable Long Tip_id){
         return recycleTipService.getRecycleTipById(Tip_id);
     }
 
-    @GetMapping(path = "active/{date}")
+    @GetMapping(path = "/active/{date}")
     public List<RecycleTip> getActiveTipsFromDate(@RequestParam("createdFrom") String date)
     {
         LocalDate createdDate = LocalDate.parse(date);
@@ -48,13 +48,13 @@ public class RecycleTipController {
         return recycleTipService.addNewRecycleTip(recycleTipMapper.toRecycleTip(recycleTipCreateRequest));
     }
 
-    @DeleteMapping(path = "{recycleTip_id}")
+    @DeleteMapping(path = "/{recycleTip_id}")
     public void deleteTip(@PathVariable Long recycleTip_id)
     {
         recycleTipService.deleteRecycleTip(recycleTip_id);
     }
 
-    @PutMapping(path = "{recycleTip_id}")
+    @PutMapping(path = "/{recycleTip_id}")
     public RecycleTip UpdateTip(@RequestBody @Valid RecycleTipUpdateRequest recycleTipUpdateRequest, @PathVariable Long recycleTip_id)
     {
        return recycleTipService.updateRecycleTip(recycleTipMapper.toRecycleTip(recycleTipUpdateRequest),recycleTip_id);
