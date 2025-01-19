@@ -1,9 +1,14 @@
 Technologies Used
   Spring Boot: The main framework for creating REST APIs.
+  
   Spring Data JPA: For database interactions.
+  
   PostgreSQL (or another relational database): To store data persistently.
+  
   Swagger: For API documentation and testing.
+  
   Jakarta Validation: For input validation.
+  
   Maven: For dependency management and build automation.
 
 Setup & Installation
