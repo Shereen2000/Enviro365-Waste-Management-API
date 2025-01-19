@@ -5,7 +5,7 @@ Technologies Used
   
   PostgreSQL (or another relational database): To store data persistently.
   
-  Swagger: For API documentation and testing.
+  Swagger: For API documentation and testing..
   
   Jakarta Validation: For input validation.
   
